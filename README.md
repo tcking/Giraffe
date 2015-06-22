@@ -38,10 +38,10 @@ production.openAPIServer=http://wwww.myhost.com #表示生产的环境配置
 
 * **1.日志**
 支持参数化（只有在日志打印的时候字符串才进行拼接，性能更好）
-{% highlight java%}
+``` java
 Log.d("hello {},hello {}","world","giraffe");
 Log.e("parameter a={},b={},c={}","a","b","c",exception);
-{% endhighlight %}
+```
 
 * **2.DAO**
 DAO采用[__greenDAO__](https://github.com/greenrobot/greenDAO)，修改module dao下的<code>DAOGenerator</code>，再运行DAOGenerator的main方法在模块app下生产对应的POJO和DAO文件
