@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="managers" translatable="false">
+        <item>com.github.tcking.giraffe.manager.ConfigManager</item>
+    </string-array>
+</resources>
