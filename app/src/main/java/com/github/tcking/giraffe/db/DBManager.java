@@ -3,8 +3,10 @@ package com.github.tcking.giraffe.db;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.github.tcking.giraffe.core.CoreApp;
+import com.github.tcking.giraffe.manager.AppSecurityManager;
 import com.github.tcking.giraffe.model.DaoMaster;
 import com.github.tcking.giraffe.model.DaoSession;
+import com.github.tcking.giraffe.model.KVTable;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -52,5 +54,66 @@ public class DBManager {
         }
     }
 
+
+    /**
+     * 获取当前用户的数据库实例
+     * @return
+     */
+    public static DBManager getInstance() {
+        String userId = AppSecurityManager.currentUserId();
+        if (userId ==null) {
+            throw new RuntimeException("is user login?");
+        }
+        return getInstance(userId);
+    }
+
+
+    /**
+     * 根据KVTable的key或者value
+     *
+     * @param key
+     * @return
+     */
+    public String getV(String key) {
+        KVTable kv = daoSession.getKVTableDao().load(key);
+        if (kv != null) {
+            return kv.getValue();
+        }
+        return null;
+    }
+
+    /**
+     * 删除键值队
+     *
+     * @param key
+     */
+    public void removeV(String key) {
+        KVTable kv = daoSession.getKVTableDao().load(key);
+        if (kv != null) {
+            daoSession.getKVTableDao().delete(kv);
+        }
+    }
+
+    /**
+     * @param key
+     * @param value
+     * @return
+     */
+    public boolean updateKV(String key, String value) {
+        boolean existed = false;
+        KVTable kv = daoSession.getKVTableDao().load(key);
+        if (kv == null) {
+            kv = new KVTable(key, value);
+            existed = true;
+        } else {
+            kv.setValue(value);
+        }
+        daoSession.getKVTableDao().insertOrReplace(kv);
+        return existed;
+    }
+
+    public void updateKVTable(String key, String value) {
+        daoSession.getKVTableDao().insertOrReplace(new KVTable(key, value));
+    }
 
 }

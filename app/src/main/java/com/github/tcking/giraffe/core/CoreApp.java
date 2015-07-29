@@ -6,7 +6,7 @@ import android.os.AsyncTask;
 import android.os.Handler;
 import android.os.StrictMode;
 
-import com.github.tcking.giraffe.R;
+import com.github.tcking.giraffe.event.AppInitEvent;
 import com.github.tcking.giraffe.event.LowMemoryEvent;
 import com.github.tcking.giraffe.manager.Manager;
 
@@ -23,7 +23,7 @@ import de.greenrobot.event.EventBus;
  * 3.开始事件驱动流程
  * Created by tc(mytcking@gmail.com) on 15/6/16.
  */
-public  class CoreApp extends Application {
+public abstract class CoreApp extends Application {
     private static CoreApp instance;
     List<Manager> registeredManagers=new ArrayList<Manager>();
     private Handler handler;
@@ -40,7 +40,6 @@ public  class CoreApp extends Application {
     public void onCreate() {
         super.onCreate();
         loadAsyncTask();
-        Thread.currentThread().setPriority(Thread.MAX_PRIORITY);
         CoreAppConfig.configure(this);//加载配置
         if (CoreAppConfig.isStrictMode()) {
             StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder()
@@ -57,15 +56,14 @@ public  class CoreApp extends Application {
                     .build());
         }
         registerManager(getRegisterManager());
+        EventBus.getDefault().post(new AppInitEvent(this));
     }
 
     /**
      * 获取注册了的manager
      * @return
      */
-    protected int getRegisterManager(){
-        return R.array.managers;
-    }
+    public abstract int getRegisterManager();
 
     /**
      * 获取Application实例
@@ -87,7 +85,7 @@ public  class CoreApp extends Application {
                 Manager manager=(Manager) Class.forName(managerClasses.getString(index)).newInstance();
                 Log.d("CoreApp.registerManager {}",manager.getClass().getName());
                 registeredManagers.add(manager);
-                manager.onAppStart();
+                manager.onAppStart(this);
             } catch (Throwable e) {
                 throw new RuntimeException(e);
             }

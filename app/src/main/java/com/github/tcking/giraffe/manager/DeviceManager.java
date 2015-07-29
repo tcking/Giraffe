@@ -47,10 +47,10 @@ public class DeviceManager extends BroadcastReceiver implements Manager {
     }
 
     @Override
-    public void onAppStart() {
+    public void onAppStart(Context context) {
         IntentFilter filter = new IntentFilter();
         filter.addAction(ConnectivityManager.CONNECTIVITY_ACTION);
-        CoreApp.getInstance().registerReceiver(this, filter);
+        context.registerReceiver(this, filter);
 
         density=getDisplayMetrics().density;
     }

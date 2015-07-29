@@ -3,8 +3,8 @@ package com.github.tcking.giraffe.db;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.csi.jf.mobile.core.Log;
-import com.csi.jf.mobile.model.DaoMaster;
+import com.github.tcking.giraffe.core.Log;
+import com.welezu.mobile.model.DaoMaster;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;

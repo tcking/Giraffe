@@ -1,7 +1,7 @@
 package com.github.tcking.giraffe.manager;
 
-import com.github.tcking.giraffe.Config;
 import com.github.tcking.giraffe.event.ConfigLoadEvent;
+import com.welezu.mobile.Config;
 
 import java.io.File;
 

@@ -3,6 +3,8 @@
  */
 package com.github.tcking.giraffe.manager;
 
+import android.content.Context;
+
 import com.github.tcking.giraffe.event.AppInitEvent;
 
 import de.greenrobot.event.EventBus;
@@ -37,7 +39,7 @@ public abstract class BaseManager implements Manager{
 	/**
 	 * 在应用启动的时候注册到事件总线
 	 */
-	public void onAppStart(){
+	public void onAppStart(Context context){
 		if (registerToEventBus) {
 			EventBus.getDefault().register(this);
 		}

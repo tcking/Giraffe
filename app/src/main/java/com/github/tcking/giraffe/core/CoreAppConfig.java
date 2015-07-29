@@ -23,15 +23,16 @@ import de.greenrobot.event.EventBus;
 public abstract class CoreAppConfig {
 
 	/**
-	 * 默认加载配置文件的名称
+	 * 默认加载配置文件的名称:assets/config.properties
 	 */
 	public static final String configureFileName= "config.properties";
 
 	protected static String mode;//当前app所在的环境[dev,test,rc,production]
 	protected static boolean strictMode;//是否开启严格模式
 	protected static boolean isSqlDebug;//是否打开sql的debug（打印出sql语句）
+    protected static String appHome="/giraffe";
 
-	/**
+    /**
 	 * 是否为严格模式，用于在开发阶段查找问题
 	 * @return
 	 */
@@ -44,7 +45,7 @@ public abstract class CoreAppConfig {
 	 * @return
 	 */
 	public static boolean isProductionMode() {
-		return "production".endsWith(mode);
+		return "production".equals(mode);
 	}
 
 
@@ -61,7 +62,8 @@ public abstract class CoreAppConfig {
 			PlaceHolderProperties properties = new PlaceHolderProperties();
 			properties.load(inputStream);
 			mode=properties.getProperty("mode", "dev");
-			strictMode="true".equals(properties.getProperty(mode + ".strictMode", "false"));
+            appHome = properties.getProperty("app_home", appHome);
+            strictMode="true".equals(properties.getProperty(mode + ".strictMode", "false"));
 			isSqlDebug="true".equals(properties.getProperty(mode+".isSqlDebug", "false"));
             PropertyConfigurator.getConfigurator(context).configure(properties);//配置日志
             EventBus.getDefault().postSticky(new ConfigLoadEvent(properties));
