@@ -30,5 +30,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" exported="" name="freemarker" level="project" />
+    <orderEntry type="library" exported="" name="dao.dao" level="project" />
   </component>
 </module>
