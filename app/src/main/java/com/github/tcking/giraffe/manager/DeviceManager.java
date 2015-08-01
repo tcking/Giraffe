@@ -6,10 +6,13 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.net.wifi.WifiInfo;
+import android.net.wifi.WifiManager;
 import android.telephony.TelephonyManager;
 import android.util.DisplayMetrics;
 
 import com.github.tcking.giraffe.core.CoreApp;
+import com.github.tcking.giraffe.core.Log;
 import com.github.tcking.giraffe.event.DeviceNetworkChangeEvent;
 
 import de.greenrobot.event.EventBus;
@@ -190,5 +193,16 @@ public class DeviceManager extends BroadcastReceiver implements Manager {
      */
     public int getScreenHeightInDp(){
         return px2dp(getScreenHeightInPx());
+    }
+
+    public WifiInfo getWifiInfo() {
+        if (!hasWifi()) {
+            return null;
+        } else {
+            WifiManager wifiManager = (WifiManager) CoreApp.getInstance().getSystemService(CoreApp.WIFI_SERVICE);
+            WifiInfo wifiInfo = wifiManager.getConnectionInfo();
+            Log.d("DeviceManager.getWifiInfo: {}",wifiInfo);
+            return wifiInfo;
+        }
     }
 }

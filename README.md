@@ -52,5 +52,11 @@ DAO采用[__greenDAO__](https://github.com/greenrobot/greenDAO)，修改module d
 
 * **3.DeviceManager** 获取设备相关的信息，例如网络状态，类型，IMEI，屏幕像素，分辨率，px和dp的相互转换等。
 
+* **4.AppLocationManager** 
+获取定位（目前只支持单次定位，获取到位置信息后停止定位）
+1.要获取定位时，调用`AppLocationManager.getInstance().tryLocation(GPSFirst,15000);//GPS优先，定位超时15s`
+2.获取到定位消息时发送Event：LocationEvent
+3.获取定位超时时发送Event：LocationTimeoutEvent
+
 
 
