@@ -4,6 +4,7 @@
 
 android开发是件体力活，我们都需要花大量的时间去堆砌跟业务无关的代码，例如拍照，获取照片，处理照片大小，各线程之间的交互等，这些问题都有优秀的方案来解决，Giraffe是将这些优秀的东西集合和组织起来，成为一个快速搭建android app的脚手架，让“卓码”将更多的精力放到业务的处理上。
 Giraffe是这样来组织app的：
+
 1. app以事件驱动，从app的加载配置，完成启动，到各业务，例如获取定位等都是以事件的方式发出。
 2. app在启动的时候按次序实例化manager，并注册到事件总线中。manager是一个独立的逻辑处理类，或者业务处理类，例如处理定位信息的AppLocationManager，这些Manager一般情况下应该都是单例。
 
@@ -72,6 +73,7 @@ DAO采用[__greenDAO__](https://github.com/greenrobot/greenDAO)，修改module d
 
 * **4.AppLocationManager** 
 获取定位（目前只支持单次定位，获取到位置信息后停止定位）
+
 1.要获取定位时，调用`AppLocationManager.getInstance().tryLocation(GPSFirst,15000);//GPS优先，定位超时15s`
 2.获取到定位消息时发送Event：LocationEvent
 3.获取定位超时时发送Event：LocationTimeoutEvent
