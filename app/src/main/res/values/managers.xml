@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="managers" translatable="false">
-        <item>com.github.tcking.giraffe.manager.ConfigManager</item>
+        <item>com.github.tcking.example.manager.AppConfigManager</item>
+        <item>com.github.tcking.giraffe.manager.DeviceManager</item>
+        <item>com.github.tcking.giraffe.manager.AppSecurityManager</item>
     </string-array>
 </resources>

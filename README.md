@@ -3,11 +3,29 @@
 ---------
 
 android开发是件体力活，我们都需要花大量的时间去堆砌跟业务无关的代码，例如拍照，获取照片，处理照片大小，各线程之间的交互等，这些问题都有优秀的方案来解决，Giraffe是将这些优秀的东西集合和组织起来，成为一个快速搭建android app的脚手架，让“卓码”将更多的精力放到业务的处理上。
+Giraffe是这样来组织app的：
+1. app以事件驱动，从app的加载配置，完成启动，到各业务，例如获取定位等都是以事件的方式发出。
+2. app在启动的时候按次序实例化manager，并注册到事件总线中。manager是一个独立的逻辑处理类，或者业务处理类，例如处理定位信息的AppLocationManager，这些Manager一般情况下应该都是单例。
 
 
 ## 依赖关系
 <hr>
 原则上app/libs下不放置任何jar包，所有的第三方jar统一放到:commonlib中，其他module则在依赖commonlib
+
+## 如何使用
+1. 在Grraffe工程的基础上开始一个新的project，或者自己创建一个新的project，然后import app之外的module，再将app下的src目录拷贝到新工程的src目录。
+2. 创建自己的Application类，继承自CoreApp，实现getRegisterManager，返回注册了的manager数组资源，app在启动的时候按次序实例化manager，并注册到事件总线中.例如：
+```
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="managers" translatable="false">
+        <item>com.github.tcking.example.manager.AppConfigManager</item>
+        <item>com.github.tcking.giraffe.manager.DeviceManager</item>
+        <item>com.github.tcking.giraffe.manager.AppSecurityManager</item>
+    </string-array>
+</resources>
+```
+3. 
 
 ## 配置
 <hr>
@@ -58,5 +76,9 @@ DAO采用[__greenDAO__](https://github.com/greenrobot/greenDAO)，修改module d
 2.获取到定位消息时发送Event：LocationEvent
 3.获取定位超时时发送Event：LocationTimeoutEvent
 
-
-
+## 事件
+1. ConfigLoadEvent:配置文件加载完成后驱动的事件(stick事件，在AppInitEvent时remove)
+2. AppInitEvent:app完成初始化时发布的事件
+3. DeviceNetworkChangeEvent: 网络状态发送变化时
+4. LocationEvent：获取到网络定位时发布的事件（通过AppLocationManager.getInstance().tryLocation()开始定位）
+5. LocationTimeoutEvent：定位超时时的事件
