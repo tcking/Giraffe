@@ -78,6 +78,32 @@ DAO采用[__greenDAO__](https://github.com/greenrobot/greenDAO)，修改module d
 2.获取到定位消息时发送Event：LocationEvent
 3.获取定位超时时发送Event：LocationTimeoutEvent
 
+* **AppSMSManager**
+读取短信验证码，有两个实现类
+
+ * 实现类：SMSVerificationCodeReceiver:通过receiver读取，如果系统装有其他第三方app管理短信，可能导致读取不到，读取时可能不会弹授权框( )
+ * 实现类：SMSVerificationCodeContentObserver:直接读取短信数据库，肯定能读取到，但是会弹出授权框（有些系统里）
+
+```
+//1.获取接受短信的Receiver实例
+AppSMSManager.SMSReceiver smsReceiver= new SMSVerificationCodeReceiver(){
+public String parseVerificationCode(String msgBody) {
+        String regEx = "^(【天猫】)\\D*([0-9]{6})";
+        Pattern p = Pattern.compile(regEx);
+        Matcher m = p.matcher(msgBody);
+        if (m.find()) {
+            return m.group(2);
+        }
+        return null;
+    }
+};
+//2.注册
+sms.register();
+//3. 处理SMSVerificationCodeEvent事件,通过SMSVerificationCodeEvent.getCode()获取验证码
+//4.反注册 
+sms.unregister();
+```
+
 ## 事件
 1. ConfigLoadEvent:配置文件加载完成后驱动的事件(stick事件，在AppInitEvent时remove)
 2. AppInitEvent:app完成初始化时发布的事件

@@ -8,6 +8,12 @@
 
     <!-- 获取mac地址和ssid用-->
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    <!-- 自动获取短信验证码用：SMSVerificationCodeContentObserver-->
+    <uses-permission android:name="android.permission.READ_SMS" />
+
+    <!-- 自动获取短信验证码用：SMSVerificationCodeReceiver-->
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
     <application
         android:name=".App"
         android:allowBackup="true"
