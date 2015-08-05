@@ -70,6 +70,9 @@ DAO采用[__greenDAO__](https://github.com/greenrobot/greenDAO)，修改module d
 
 * **3.DeviceManager** 获取设备相关的信息，例如网络状态，类型，IMEI，屏幕像素，分辨率，px和dp的相互转换等。
 
+* **4.AppConfigManager**
+从ConfigLoadEvent事件中获取`Properties`对象（来自配置文件/assets/config.properties）,并初始化应用自己的配置文件；`CoreAppConfig`中的配置在app启动时已经配置完成，应用自己的配置类一般继承`CoreAppConfig`
+
 * **4.AppLocationManager** 
 获取定位（目前只支持单次定位，获取到位置信息后停止定位）
 
