@@ -73,14 +73,14 @@ DAO采用[__greenDAO__](https://github.com/greenrobot/greenDAO)，修改module d
 * **4.AppConfigManager**
 从ConfigLoadEvent事件中获取`Properties`对象（来自配置文件/assets/config.properties）,并初始化应用自己的配置文件；`CoreAppConfig`中的配置在app启动时已经配置完成，应用自己的配置类一般继承`CoreAppConfig`
 
-* **4.AppLocationManager** 
+* **5.AppLocationManager** 
 获取定位（目前只支持单次定位，获取到位置信息后停止定位）
 
 1.要获取定位时，调用`AppLocationManager.getInstance().tryLocation(GPSFirst,15000);//GPS优先，定位超时15s`
 2.获取到定位消息时发送Event：LocationEvent
 3.获取定位超时时发送Event：LocationTimeoutEvent
 
-* **AppSMSManager**
+* **6.AppSMSManager**
 读取短信验证码，有两个实现类
 
  * 实现类：SMSVerificationCodeReceiver:通过receiver读取，如果系统装有其他第三方app管理短信，可能导致读取不到，读取时可能不会弹授权框( )
