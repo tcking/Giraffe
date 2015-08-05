@@ -110,3 +110,4 @@ sms.unregister();
 3. DeviceNetworkChangeEvent: 网络状态发送变化时
 4. LocationEvent：获取到网络定位时发布的事件（通过AppLocationManager.getInstance().tryLocation()开始定位）
 5. LocationTimeoutEvent：定位超时时的事件
+6. SMSVerificationCodeEvent：获取到短信验证码时发布的事件
