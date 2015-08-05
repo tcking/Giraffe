@@ -15,7 +15,7 @@ Giraffe是这样来组织app的：
 
 ## 如何使用
 1. 在Grraffe工程的基础上开始一个新的project，或者自己创建一个新的project，然后import app之外的module，再将app下的src目录拷贝到新工程的src目录。
-2. 创建自己的Application类，继承自CoreApp，实现getRegisterManager，返回注册了的manager数组资源，app在启动的时候按次序实例化manager，并注册到事件总线中.例如：
+2. 创建自己的Application类，继承自CoreApp，实现getRegisterManager（返回注册了的manager数组资源，app在启动的时候按次序实例化manager），并注册到事件总线中.例如：
 ```
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
@@ -26,7 +26,6 @@ Giraffe是这样来组织app的：
     </string-array>
 </resources>
 ```
-3. 
 
 ## 配置
 <hr>
