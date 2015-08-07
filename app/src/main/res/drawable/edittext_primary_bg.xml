@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_enabled="false">
+        <shape
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:shape="rectangle">
+            <!-- 边框 -->
+            <stroke android:color="@color/app_disabled_EditText_border" android:width="@dimen/app_border" />
+            <!-- 圆角 -->
+            <corners android:radius="@dimen/app_radius" />
+
+            <!-- padding：Button里面的文字与Button边界的间隔 -->
+            <padding
+                android:left="@dimen/app_8dp"
+                android:top="@dimen/app_8dp"
+                android:right="@dimen/app_8dp"
+                android:bottom="@dimen/app_8dp"
+                />
+            <solid android:color="@color/app_disabled_EditText" />
+        </shape>
+    </item>
+    <item>
+        <shape
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:shape="rectangle">
+            <!-- 边框 -->
+            <stroke android:color="@color/app_colorPrimary" android:width="@dimen/app_border" />
+            <!-- 圆角 -->
+            <corners android:radius="@dimen/app_radius" />
+
+            <!-- padding：Button里面的文字与Button边界的间隔 -->
+            <padding
+                android:left="@dimen/app_8dp"
+                android:top="@dimen/app_8dp"
+                android:right="@dimen/app_8dp"
+                android:bottom="@dimen/app_8dp"
+                />
+            <solid android:color="@android:color/white" />
+        </shape>
+    </item>
+
+</selector>

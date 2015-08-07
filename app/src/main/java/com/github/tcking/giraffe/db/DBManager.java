@@ -3,7 +3,7 @@ package com.github.tcking.giraffe.db;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.github.tcking.giraffe.core.CoreApp;
-import com.github.tcking.giraffe.manager.AppSecurityManager;
+import com.github.tcking.giraffe.manager.CoreSecurityManager;
 import com.github.tcking.giraffe.model.DaoMaster;
 import com.github.tcking.giraffe.model.DaoSession;
 import com.github.tcking.giraffe.model.KVTable;
@@ -60,7 +60,7 @@ public class DBManager {
      * @return
      */
     public static DBManager getInstance() {
-        String userId = AppSecurityManager.currentUserId();
+        String userId = CoreSecurityManager.currentUserId();
         if (userId ==null) {
             throw new RuntimeException("is user login?");
         }

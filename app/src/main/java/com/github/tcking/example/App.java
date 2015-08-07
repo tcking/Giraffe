@@ -1,6 +1,5 @@
 package com.github.tcking.example;
 
-import com.github.tcking.giraffe.R;
 import com.github.tcking.giraffe.core.CoreApp;
 
 /**

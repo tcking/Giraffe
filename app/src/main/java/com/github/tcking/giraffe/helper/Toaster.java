@@ -2,7 +2,9 @@ package com.github.tcking.giraffe.helper;
 
 import android.widget.Toast;
 
-import com.welezu.mobile.App;
+import com.github.tcking.example.App;
+import com.github.tcking.giraffe.core.CoreApp;
+
 
 /**
  * Created by tc(mytcking@gmail.com) on 15/7/27.
@@ -18,7 +20,7 @@ public class Toaster {
     }
 
     private static void show(final String message, final int length) {
-        App.getInstance().runOnUiTread(new Runnable() {
+        CoreApp.getInstance().runOnUiTread(new Runnable() {
             @Override
             public void run() {
                 Toast.makeText(App.getInstance(), message, length).show();

@@ -6,7 +6,7 @@ import android.database.sqlite.SQLiteDatabase.CursorFactory;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
-import com.welezu.mobile.model.DaoMaster;
+import com.github.tcking.giraffe.model.DaoMaster;
 
 
 public class DBOpenHelper extends SQLiteOpenHelper {

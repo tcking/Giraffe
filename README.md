@@ -22,7 +22,7 @@ Giraffe是这样来组织app的：
     <string-array name="managers" translatable="false">
         <item>com.github.tcking.example.manager.AppConfigManager</item>
         <item>com.github.tcking.giraffe.manager.DeviceManager</item>
-        <item>com.github.tcking.giraffe.manager.AppSecurityManager</item>
+        <item>com.github.tcking.giraffe.manager.CoreSecurityManager</item>
     </string-array>
 </resources>
 ```

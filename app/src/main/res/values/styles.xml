@@ -1,8 +1,108 @@
 <resources>
 
-    <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
+    <style name="CoreBaseApp" parent="Theme.AppCompat.NoActionBar">
+
+        <item name="colorPrimary">@color/app_colorPrimary</item>
+        <!--   darker variant for the status bar and contextual app bars -->
+        <item name="colorPrimaryDark">@color/app_colorPrimaryDark</item>
+        <!--   theme UI controls like checkboxes and text fields e.g. FloatActionButton -->
+        <item name="colorAccent">@color/app_colorPrimary</item>
+        <!--Sets the color of the control when it is not activated.-->
+        <item name="colorControlNormal">@color/app_colorPrimary</item>
+        <!--Sets the color when the control is activated. Overwrites the colorAccent attribute.-->
+        <item name="colorControlActivated">@color/app_colorPrimary</item>
+        <!-- Sets the color of text on controls. Prior to Android 5.0, this only sets the color of the action bar title and overflow menu -->
+        <item name="android:textColorPrimary">@color/app_text_primary</item>
+
+        <!-- color of the menu overflow icon (three vertical dots) -->
+        <item name="android:textColorSecondary">@color/app_text_secondary</item>
+        <item name="android:windowBackground">@android:color/white</item>
     </style>
 
+    <!--
+       Base application theme, dependent on API level. This theme is replaced
+       by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+   -->
+    <style name="AppBaseTheme" parent="CoreBaseApp">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+
+    <!-- Application theme. -->
+    <style name="App" parent="AppBaseTheme">
+         <!--All customizations that are NOT specific to a particular API-level can go here.-->
+        <item name="buttonStyle">@style/App.Button</item>
+        <item name="editTextStyle">@style/App.EditText</item>
+        <item name="editTextColor">?android:attr/textColorPrimary</item>
+         <!--hint的颜色-->
+        <item name="android:textColorHint">@color/app_hint</item>
+    </style>
+
+    <!-- toolbar的样式-->
+    <style name="App.Toolbar" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <!--title的文字颜色-->
+        <!--<item name="android:textColorPrimary">#0f0</item>-->
+        <!--<item name="android:textColorSecondary">#00f</item>-->
+        <!--主标题和toolbar上菜单的背景,不是整个bar的背景-->
+        <!--<item name="android:background">#f00</item>-->
+    </style>
+
+    <style name="App.Button" parent="@style/Widget.AppCompat.Button">
+        <item name="android:background">@drawable/btn_bg</item>
+        <item name="android:textColor">@drawable/btn_text</item>
+        <item name="android:textSize">@dimen/app_text_16sp</item>
+
+        <!-- margin作为app的theme无效，必须要再控件中显示引入这个style-->
+        <item name="android:layout_marginTop">@dimen/app_6dp</item>
+        <item name="android:layout_marginBottom">@dimen/app_6dp</item>
+        <item name="android:layout_marginLeft">@dimen/app_8dp</item>
+        <item name="android:layout_marginRight">@dimen/app_8dp</item>
+    </style>
+
+
+    <style name="App.Button.Primary">
+        <item name="android:background">@drawable/btn_primary_bg</item>
+        <item name="android:textColor">@drawable/btn_primary_text</item>
+    </style>
+
+    <style name="App.Button.Warning">
+        <item name="android:background">@drawable/btn_warning_bg</item>
+        <item name="android:textColor">@drawable/btn_warning_text</item>
+    </style>
+
+    <style name="App.TextView">
+
+        <!-- margin作为app的theme无效，必须要再控件中显示引入这个style-->
+        <item name="android:layout_marginTop">@dimen/app_8dp</item>
+        <item name="android:layout_marginBottom">@dimen/app_8dp</item>
+        <item name="android:layout_marginLeft">@dimen/app_8dp</item>
+        <item name="android:layout_marginRight">@dimen/app_8dp</item>
+    </style>
+
+    <style name="App.EditText" parent="@style/Widget.AppCompat.EditText">
+        <item name="android:background">@drawable/edittext_primary_bg</item>
+
+        <!-- margin作为app的theme无效，必须要再控件中显示引入这个style-->
+        <item name="android:layout_marginTop">@dimen/app_8dp</item>
+        <item name="android:layout_marginBottom">@dimen/app_8dp</item>
+        <item name="android:layout_marginLeft">@dimen/app_8dp</item>
+        <item name="android:layout_marginRight">@dimen/app_8dp</item>
+    </style>
+
+
+
+    <style name="App.TextView.Label">
+        <item name="android:textColor">@color/app_text_label</item>
+        <!--<item name="android:textSize">16dp</item>-->
+        <!--<item name="android:layout_marginRight">@dimen/app_8dp</item>-->
+    </style>
+
+    <style name="App.CheckBox" parent="@style/Widget.AppCompat.CompoundButton.CheckBox">
+        <item name="android:textColor">@drawable/text_lightbg</item>
+    </style>
+
+    <dimen name="app_text_16sp">16sp</dimen>
 </resources>

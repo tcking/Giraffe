@@ -4,7 +4,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.github.tcking.giraffe.core.Log;
-import com.welezu.mobile.model.DaoMaster;
+import com.github.tcking.giraffe.model.DaoMaster;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;

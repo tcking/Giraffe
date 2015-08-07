@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="app_colorPrimary">@color/Indigo_500</color>
+    <color name="app_colorPrimaryDark">@color/Indigo_700</color>
+
+    <!--输入框的hint-->
+    <color name="app_hint">@color/Indigo_100</color>
+    <!-- 搜索高亮的颜色-->
+    <color name="app_highlight_search">@color/Indigo_800</color>
+
+
+    <!--*********************** text *************************-->
+    <!-- app文字的颜色，包括：
+    CheckBox 文字颜色
+    EditExt 输入的文字颜色
+    -->
+    <color name="app_text_primary">#000</color>
+    <!-- label的文字颜色-->
+    <color name="app_text_label">@color/Indigo_100</color>
+    <!-- -->
+    <color name="app_text_secondary">#F00</color>
+    <!-- 深色背景下的文字颜色-->
+    <color name="app_text_darkbg">#FFF</color>
+    <!-- 深色背景下的不可用文字-->
+    <color name="app_text_darkbg_disabled">@color/Grey_500</color>
+
+    <!-- 浅色背景时控件上文字正常状态的颜色-->
+    <color name="app_text_lightbg">@color/Grey_900</color>
+    <!-- 浅色背景时控件上文字disabled状态的颜色-->
+    <color name="app_text_lightbg_disabled">@color/Grey_500</color>
+
+
+    <!--*********************** button *************************-->
+    <!-- default-->
+    <!-- 按钮可用时的背景-->
+    <color name="app_button_bg">@color/Indigo_100</color>
+    <!-- 按钮可用时的文字-->
+    <color name="app_button_text">@color/Grey_900</color>
+
+    <!-- 按钮不可用时的背景-->
+    <color name="app_button_bg_disabled">@color/Grey_300</color>
+    <!-- 按钮不可用时的文字-->
+    <color name="app_button_text_disabled">@color/Grey_500</color>
+
+    <!-- 按钮按住时的颜色背景-->
+    <color name="app_button_bg_pressed">@color/Indigo_200</color>
+    <!-- 按钮按住时的文字颜色-->
+    <color name="app_button_text_pressed">@color/Grey_900</color>
+
+    <!-- primary-->
+    <!-- 按钮可用时的背景-->
+    <color name="app_button_primary_bg">@color/Indigo_700</color>
+    <!-- 按钮可用时的文字-->
+    <color name="app_button_primary_text">@android:color/white</color>
+
+    <!-- 按钮不可用时的背景-->
+    <color name="app_button_primary_bg_disabled">@color/Grey_300</color>
+    <!-- 按钮不可用时的文字-->
+    <color name="app_button_primary_text_disabled">@color/Grey_500</color>
+
+    <!-- 按钮按住时的颜色背景-->
+    <color name="app_button_primary_bg_pressed">@color/Indigo_900</color>
+    <!-- 按钮按住时的文字颜色-->
+    <color name="app_button_primary_text_pressed">@android:color/white</color>
+
+    <!-- warning-->
+    <!-- 按钮可用时的背景-->
+    <color name="app_button_warning_bg">@color/Indigo_700</color>
+    <!-- 按钮可用时的文字-->
+    <color name="app_button_warning_text">@android:color/white</color>
+
+    <!-- 按钮不可用时的背景-->
+    <color name="app_button_warning_bg_disabled">@color/Grey_300</color>
+    <!-- 按钮不可用时的文字-->
+    <color name="app_button_warning_text_disabled">@color/Grey_500</color>
+
+    <!-- 按钮按住时的颜色背景-->
+    <color name="app_button_warning_bg_pressed">@color/Indigo_900</color>
+    <!-- 按钮按住时的文字颜色-->
+    <color name="app_button_warning_text_pressed">@android:color/white</color>
+
+
+
+
+
+
+
+    <color name="app_disabled_EditText">@color/Grey_100</color>
+    <color name="app_disabled_EditText_border">@color/Grey_200</color>
+
+
+
+</resources>

@@ -8,7 +8,7 @@ import com.github.tcking.giraffe.model.Certificate;
  * 安全管理
  * Created by tc(mytcking@gmail.com) on 15/7/10.
  */
-public abstract class AppSecurityManager extends BaseManager {
+public abstract class CoreSecurityManager extends BaseManager {
 
     @Override
     public void onAppStart(Context context) {

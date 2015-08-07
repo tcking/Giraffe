@@ -4,14 +4,15 @@ import android.content.res.Resources;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 
-import com.welezu.mobile.App;
+import com.github.tcking.giraffe.core.CoreApp;
+
 
 /**
  * Created by tc(mytcking@gmail.com) on 15/7/23.
  */
 public class UIHelper {
     public static Drawable getTintedDrawable(int drawableResId,int colorResId) {
-        Resources res = App.getInstance().getResources();
+        Resources res = CoreApp.getInstance().getResources();
         Drawable drawable = res.getDrawable(drawableResId);
         int color = res.getColor(colorResId);
         drawable.setColorFilter(color, PorterDuff.Mode.SRC_IN);
@@ -19,7 +20,7 @@ public class UIHelper {
     }
 
     public static Drawable getTintedDrawableWithBounds(int drawableResId,int colorResId) {
-        Resources res = App.getInstance().getResources();
+        Resources res = CoreApp.getInstance().getResources();
         Drawable drawable = res.getDrawable(drawableResId);
         int color = res.getColor(colorResId);
         drawable.setColorFilter(color, PorterDuff.Mode.SRC_IN);

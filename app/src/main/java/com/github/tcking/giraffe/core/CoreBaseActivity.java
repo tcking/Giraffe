@@ -7,8 +7,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 
 import com.github.tcking.giraffe.helper.Toaster;
-import com.github.tcking.giraffe.manager.CoreAnalyticsManager;
-import com.github.tcking.giraffe.manager.AppSecurityManager;
+import com.github.tcking.giraffe.manager.AppAnalyticsManager;
+import com.github.tcking.giraffe.manager.AppAnalyticsManager;
+import com.github.tcking.giraffe.manager.CoreSecurityManager;
 
 import java.util.Stack;
 
@@ -40,9 +41,9 @@ public class CoreBaseActivity extends AppCompatActivity {
         super.onResume();
         _isVisible=true;
         if (analyticsEnabled) {
-            CoreAnalyticsManager.getInstance().onPageStart(getAnalyticsPageName());
+            AppAnalyticsManager.getInstance().onPageStart(getAnalyticsPageName());
         }
-        CoreAnalyticsManager.getInstance().onResume(this);
+        AppAnalyticsManager.getInstance().onResume(this);
     }
 
     @Override
@@ -50,9 +51,9 @@ public class CoreBaseActivity extends AppCompatActivity {
         super.onPause();
         _isVisible=false;
         if (analyticsEnabled) {
-            CoreAnalyticsManager.getInstance().onPageEnd(getAnalyticsPageName());
+            AppAnalyticsManager.getInstance().onPageEnd(getAnalyticsPageName());
         }
-        CoreAnalyticsManager.getInstance().onPause(this);
+        AppAnalyticsManager.getInstance().onPause(this);
     }
 
     public static Stack<CoreBaseActivity> getActivitys() {
@@ -63,7 +64,7 @@ public class CoreBaseActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (accessControl && !AppSecurityManager.isCertificated()) {
+        if (accessControl && !CoreSecurityManager.isCertificated()) {
             onAccessDenied(this.getClass());
             finish();
             return;
