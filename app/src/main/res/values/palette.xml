@@ -23,4 +23,30 @@
     <color name="Indigo_700">#303F9F</color>
     <color name="Indigo_800">#283593</color>
     <color name="Indigo_900">#1A237E</color>
+
+    <!-- Amber-->
+    <color name="Amber_50">#FFF8E1</color>
+    <color name="Amber_100">#FFECB3</color>
+    <color name="Amber_200">#FFE082</color>
+    <color name="Amber_300">#FFD54F</color>
+    <color name="Amber_400">#FFCA28</color>
+    <color name="Amber_500">#FFC107</color>
+    <color name="Amber_600">#FFB300</color>
+    <color name="Amber_700">#FFA000</color>
+    <color name="Amber_800">#FF8F00</color>
+    <color name="Amber_900">#FF6F00</color>
+
+    <!-- Red-->
+    <color name="Red_50">#FFEBEE</color>
+    <color name="Red_100">#FFCDD2</color>
+    <color name="Red_200">#EF9A9A</color>
+    <color name="Red_300">#E57373</color>
+    <color name="Red_400">#EF5350</color>
+    <color name="Red_500">#F44336</color>
+    <color name="Red_600">#E53935</color>
+    <color name="Red_700">#D32F2F</color>
+    <color name="Red_800">#C62828</color>
+    <color name="Red_900">#B71C1C</color>
+
+
 </resources>

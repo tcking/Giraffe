@@ -73,6 +73,11 @@
         <item name="android:textColor">@drawable/btn_warning_text</item>
     </style>
 
+    <style name="App.Button.Danger">
+        <item name="android:background">@drawable/btn_danger_bg</item>
+        <item name="android:textColor">@drawable/btn_danger_text</item>
+    </style>
+
     <style name="App.TextView">
 
         <!-- margin作为app的theme无效，必须要再控件中显示引入这个style-->

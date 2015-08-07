@@ -65,9 +65,9 @@
 
     <!-- warning-->
     <!-- 按钮可用时的背景-->
-    <color name="app_button_warning_bg">@color/Indigo_700</color>
+    <color name="app_button_warning_bg">@color/Amber_300</color>
     <!-- 按钮可用时的文字-->
-    <color name="app_button_warning_text">@android:color/white</color>
+    <color name="app_button_warning_text">@color/Grey_900</color>
 
     <!-- 按钮不可用时的背景-->
     <color name="app_button_warning_bg_disabled">@color/Grey_300</color>
@@ -75,9 +75,25 @@
     <color name="app_button_warning_text_disabled">@color/Grey_500</color>
 
     <!-- 按钮按住时的颜色背景-->
-    <color name="app_button_warning_bg_pressed">@color/Indigo_900</color>
+    <color name="app_button_warning_bg_pressed">@color/Amber_400</color>
     <!-- 按钮按住时的文字颜色-->
-    <color name="app_button_warning_text_pressed">@android:color/white</color>
+    <color name="app_button_warning_text_pressed">@color/Grey_900</color>
+
+    <!-- danger-->
+    <!-- 按钮可用时的背景-->
+    <color name="app_button_danger_bg">@color/Red_600</color>
+    <!-- 按钮可用时的文字-->
+    <color name="app_button_danger_text">@android:color/white</color>
+
+    <!-- 按钮不可用时的背景-->
+    <color name="app_button_danger_bg_disabled">@color/Grey_300</color>
+    <!-- 按钮不可用时的文字-->
+    <color name="app_button_danger_text_disabled">@color/Grey_500</color>
+
+    <!-- 按钮按住时的颜色背景-->
+    <color name="app_button_danger_bg_pressed">@color/Red_700</color>
+    <!-- 按钮按住时的文字颜色-->
+    <color name="app_button_danger_text_pressed">@android:color/white</color>
 
 
 

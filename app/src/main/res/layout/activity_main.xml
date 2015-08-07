@@ -79,6 +79,18 @@
                 android:layout_height="wrap_content"
                 android:text="Button primary"/>
 
+            <Button
+                style="@style/App.Button.Warning"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Button Warning"/>
+
+            <Button
+                style="@style/App.Button.Danger"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Button Warning"/>
+
 
         </LinearLayout>
     </ScrollView>
