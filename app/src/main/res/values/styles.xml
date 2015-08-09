@@ -37,7 +37,12 @@
         <item name="buttonStyle">@style/App.Button</item>
         <item name="editTextStyle">@style/App.EditText</item>
         <item name="editTextColor">?android:attr/textColorPrimary</item>
-         <!--hint的颜色-->
+        <item name="checkboxStyle">@style/App.CheckBox</item>
+        <item name="radioButtonStyle">@style/Widget.AppCompat.CompoundButton.RadioButton</item>
+        <item name="switchStyle">@style/Widget.AppCompat.CompoundButton.Switch</item>
+
+
+        <!--hint的颜色-->
         <item name="android:textColorHint">@color/app_hint</item>
     </style>
 
@@ -78,14 +83,24 @@
         <item name="android:textColor">@drawable/btn_danger_text</item>
     </style>
 
+    <!-- TextView-->
     <style name="App.TextView">
-
         <!-- margin作为app的theme无效，必须要再控件中显示引入这个style-->
         <item name="android:layout_marginTop">@dimen/app_8dp</item>
         <item name="android:layout_marginBottom">@dimen/app_8dp</item>
         <item name="android:layout_marginLeft">@dimen/app_8dp</item>
         <item name="android:layout_marginRight">@dimen/app_8dp</item>
     </style>
+
+    <!-- 标题-->
+    <style name="App.TextView.Title">
+        <item name="android:textColor">@color/app_text_title</item>
+    </style>
+    <!-- 正文-->
+    <style name="App.TextView.Body">
+        <item name="android:textColor">@color/app_text_body</item>
+    </style>
+
 
     <style name="App.EditText" parent="@style/Widget.AppCompat.EditText">
         <item name="android:background">@drawable/edittext_primary_bg</item>
@@ -101,13 +116,11 @@
 
     <style name="App.TextView.Label">
         <item name="android:textColor">@color/app_text_label</item>
-        <!--<item name="android:textSize">16dp</item>-->
+        <item name="android:textSize">@dimen/app_text_12sp</item>
         <!--<item name="android:layout_marginRight">@dimen/app_8dp</item>-->
     </style>
 
     <style name="App.CheckBox" parent="@style/Widget.AppCompat.CompoundButton.CheckBox">
-        <item name="android:textColor">@drawable/text_lightbg</item>
+        <item name="android:textColor">@drawable/checkbox_text</item>
     </style>
-
-    <dimen name="app_text_16sp">16sp</dimen>
 </resources>

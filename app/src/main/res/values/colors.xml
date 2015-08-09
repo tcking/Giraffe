@@ -14,9 +14,14 @@
     CheckBox 文字颜色
     EditExt 输入的文字颜色
     -->
-    <color name="app_text_primary">#000</color>
+    <color name="app_text_primary">@color/Grey_900</color>
+    <!-- 标题的颜色-->
+    <color name="app_text_title">@color/Grey_900</color>
+    <!-- 正文的颜色-->
+    <color name="app_text_body">@color/Grey_600</color>
+
     <!-- label的文字颜色-->
-    <color name="app_text_label">@color/Indigo_100</color>
+    <color name="app_text_label">@color/Grey_600</color>
     <!-- -->
     <color name="app_text_secondary">#F00</color>
     <!-- 深色背景下的文字颜色-->
@@ -24,10 +29,6 @@
     <!-- 深色背景下的不可用文字-->
     <color name="app_text_darkbg_disabled">@color/Grey_500</color>
 
-    <!-- 浅色背景时控件上文字正常状态的颜色-->
-    <color name="app_text_lightbg">@color/Grey_900</color>
-    <!-- 浅色背景时控件上文字disabled状态的颜色-->
-    <color name="app_text_lightbg_disabled">@color/Grey_500</color>
 
 
     <!--*********************** button *************************-->
@@ -95,14 +96,17 @@
     <!-- 按钮按住时的文字颜色-->
     <color name="app_button_danger_text_pressed">@android:color/white</color>
 
-
-
-
-
-
-
+    <!--******************* EditText ****************************-->
     <color name="app_disabled_EditText">@color/Grey_100</color>
     <color name="app_disabled_EditText_border">@color/Grey_200</color>
+
+    <!--******************* CheckBox ****************************-->
+    <color name="app_checkbox_text">@color/Grey_900</color>
+    <color name="app_checkbox_text_disabled">@color/Grey_500</color>
+    <color name="app_checkbox_text_pressed">@color/Grey_900</color>
+
+
+
 
 
 

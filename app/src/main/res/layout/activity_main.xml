@@ -16,6 +16,12 @@
             android:layout_margin="@dimen/app_8dp"
             android:orientation="vertical">
 
+            <TextView
+                style="@style/App.TextView.Title"
+                android:text="this is title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
             <EditText
                 style="@style/App.EditText"
                 android:layout_width="match_parent"

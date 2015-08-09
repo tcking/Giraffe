@@ -18,4 +18,12 @@
     <!-- 圆角半径-->
     <dimen name="app_radius">3dp</dimen>
     <dimen name="app_border">1dp</dimen>
+
+    <!-- label-->
+    <dimen name="app_text_12sp">12sp</dimen>
+    <!-- subheader-->
+    <dimen name="app_text_14sp">14sp</dimen>
+    <!-- 单行文字-->
+    <dimen name="app_text_16sp">16sp</dimen>
+
 </resources>
