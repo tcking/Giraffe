@@ -95,10 +95,12 @@
     <!-- 标题-->
     <style name="App.TextView.Title">
         <item name="android:textColor">@color/app_text_title</item>
+        <item name="android:textSize">@dimen/app_text_16sp</item>
     </style>
     <!-- 正文-->
     <style name="App.TextView.Body">
         <item name="android:textColor">@color/app_text_body</item>
+        <item name="android:textSize">@dimen/app_text_12sp</item>
     </style>
 
 
