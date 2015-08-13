@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="app_colorPrimary">@color/Indigo_500</color>
-    <color name="app_colorPrimaryDark">@color/Indigo_700</color>
+    <color name="app_colorPrimary">@color/App_500</color>
+    <color name="app_colorPrimaryDark">@color/App_700</color>
 
     <!--输入框的hint-->
-    <color name="app_hint">@color/Indigo_100</color>
+    <color name="app_hint">@color/App_100</color>
     <!-- 搜索高亮的颜色-->
-    <color name="app_highlight_search">@color/Indigo_800</color>
+    <color name="app_highlight_search">@color/App_800</color>
 
 
     <!--*********************** text *************************-->
@@ -34,7 +34,7 @@
     <!--*********************** button *************************-->
     <!-- default-->
     <!-- 按钮可用时的背景-->
-    <color name="app_button_bg">@color/Indigo_100</color>
+    <color name="app_button_bg">@color/App_100</color>
     <!-- 按钮可用时的文字-->
     <color name="app_button_text">@color/Grey_900</color>
 
@@ -44,13 +44,13 @@
     <color name="app_button_text_disabled">@color/Grey_500</color>
 
     <!-- 按钮按住时的颜色背景-->
-    <color name="app_button_bg_pressed">@color/Indigo_200</color>
+    <color name="app_button_bg_pressed">@color/App_200</color>
     <!-- 按钮按住时的文字颜色-->
     <color name="app_button_text_pressed">@color/Grey_900</color>
 
     <!-- primary-->
     <!-- 按钮可用时的背景-->
-    <color name="app_button_primary_bg">@color/Indigo_700</color>
+    <color name="app_button_primary_bg">@color/App_700</color>
     <!-- 按钮可用时的文字-->
     <color name="app_button_primary_text">@android:color/white</color>
 
@@ -60,7 +60,7 @@
     <color name="app_button_primary_text_disabled">@color/Grey_500</color>
 
     <!-- 按钮按住时的颜色背景-->
-    <color name="app_button_primary_bg_pressed">@color/Indigo_900</color>
+    <color name="app_button_primary_bg_pressed">@color/App_900</color>
     <!-- 按钮按住时的文字颜色-->
     <color name="app_button_primary_text_pressed">@android:color/white</color>
 
@@ -105,9 +105,10 @@
     <color name="app_checkbox_text_disabled">@color/Grey_500</color>
     <color name="app_checkbox_text_pressed">@color/Grey_900</color>
 
-
-
-
+    <!--******************* RadioButton ****************************-->
+    <color name="app_radio_text">@color/Grey_900</color>
+    <color name="app_radio_text_disabled">@color/Grey_500</color>
+    <color name="app_radio_text_pressed">@color/Grey_900</color>
 
 
 </resources>

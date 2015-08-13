@@ -8,7 +8,6 @@ import android.text.TextUtils;
 
 import com.github.tcking.giraffe.helper.Toaster;
 import com.github.tcking.giraffe.manager.AppAnalyticsManager;
-import com.github.tcking.giraffe.manager.AppAnalyticsManager;
 import com.github.tcking.giraffe.manager.CoreSecurityManager;
 
 import java.util.Stack;
@@ -91,7 +90,7 @@ public class CoreBaseActivity extends AppCompatActivity {
      */
     protected void onAccessDenied(Class<? extends CoreBaseActivity> aClass) {
         Log.d("CoreBaseActivity.onAccessDenied {}", aClass);
-        Toaster.show("onAccessDenied:"+aClass.getName());
+        Toaster.show("onAccessDenied:" + aClass.getName());
     }
 
     @Override
@@ -167,5 +166,12 @@ public class CoreBaseActivity extends AppCompatActivity {
      */
     protected String getAnalyticsPageName() {
         return TextUtils.isEmpty(analyticsPageName)?getClass().getSimpleName():analyticsPageName;
+    }
+
+    public static void finishTop() {
+        if (!activitys.empty()) {
+            CoreBaseActivity activity = activitys.pop();//不能用peek，APP_SCHEMA../.. (连续关闭)
+            activity.finish();
+        }
     }
 }

@@ -4,7 +4,7 @@
               android:layout_height="match_parent"
               android:orientation="vertical">
 
-    <include layout="@layout/common_toolbar"/>
+    <include layout="@layout/griraffe_toolbar"/>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -59,18 +59,47 @@
                     android:hint="address"/>
             </LinearLayout>
 
-            <CheckBox
-                style="@style/App.CheckBox"
+            <RadioGroup
+                android:orientation="horizontal"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="enable"/>
+                android:layout_height="wrap_content">
+                <RadioButton
+                    style="@style/App.RadioButton"
+                    android:text="RadioButton A"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <RadioButton
+                    style="@style/App.RadioButton"
+                    android:text="RadioButton B"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
 
-            <CheckBox
-                style="@style/App.CheckBox"
+                <RadioButton
+                    style="@style/App.RadioButton"
+                    android:text="Disabled"
+                    android:enabled="false"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </RadioGroup>
+
+            <LinearLayout
+                android:orientation="horizontal"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:enabled="false"
-                android:text="disable"/>
+                android:layout_height="wrap_content">
+
+                <CheckBox
+                    style="@style/App.CheckBox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="enable"/>
+
+                <CheckBox
+                    style="@style/App.CheckBox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:enabled="false"
+                    android:text="disable"/>
+            </LinearLayout>
 
             <Button
                 style="@style/App.Button"

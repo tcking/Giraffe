@@ -38,7 +38,7 @@
         <item name="editTextStyle">@style/App.EditText</item>
         <item name="editTextColor">?android:attr/textColorPrimary</item>
         <item name="checkboxStyle">@style/App.CheckBox</item>
-        <item name="radioButtonStyle">@style/Widget.AppCompat.CompoundButton.RadioButton</item>
+        <item name="radioButtonStyle">@style/App.RadioButton</item>
         <item name="switchStyle">@style/Widget.AppCompat.CompoundButton.Switch</item>
 
 
@@ -125,4 +125,10 @@
     <style name="App.CheckBox" parent="@style/Widget.AppCompat.CompoundButton.CheckBox">
         <item name="android:textColor">@drawable/checkbox_text</item>
     </style>
+
+
+    <style name="App.RadioButton" parent="@style/Widget.AppCompat.CompoundButton.RadioButton">
+        <item name="android:textColor">@drawable/checkbox_text</item>
+    </style>
+
 </resources>

@@ -48,5 +48,19 @@
     <color name="Red_800">#C62828</color>
     <color name="Red_900">#B71C1C</color>
 
+    <!-- App-->
+    <color name="App_50">@color/Indigo_50</color>
+    <color name="App_100">@color/Indigo_100</color>
+    <color name="App_200">@color/Indigo_200</color>
+    <color name="App_300">@color/Indigo_300</color>
+    <color name="App_400">@color/Indigo_400</color>
+    <color name="App_500">@color/Indigo_500</color>
+    <color name="App_600">@color/Indigo_600</color>
+    <color name="App_700">@color/Indigo_700</color>
+    <color name="App_800">@color/Indigo_800</color>
+    <color name="App_900">@color/Indigo_900</color>
+    
+    
+
 
 </resources>
