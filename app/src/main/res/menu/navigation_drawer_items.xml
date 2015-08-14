@@ -6,8 +6,8 @@
             android:icon="@drawable/ic_extension_black_36dp"
             android:title="widget style example"/>
         <item
-            android:id="@+id/menu_listview"
+            android:id="@+id/menu_navbar"
             android:icon="@drawable/ic_extension_black_36dp"
-            android:title="list view style"/>
+            android:title="tab nav"/>
     </group>
 </menu>

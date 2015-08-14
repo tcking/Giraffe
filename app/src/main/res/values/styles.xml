@@ -56,8 +56,8 @@
     </style>
 
     <style name="App.Button" parent="@style/Widget.AppCompat.Button">
-        <item name="android:background">@drawable/btn_bg</item>
-        <item name="android:textColor">@drawable/btn_text</item>
+        <item name="android:background">@drawable/app_btn_bg</item>
+        <item name="android:textColor">@drawable/app_btn_text</item>
         <item name="android:textSize">@dimen/app_text_16sp</item>
 
         <!-- margin作为app的theme无效，必须要再控件中显示引入这个style-->
@@ -69,18 +69,18 @@
 
 
     <style name="App.Button.Primary">
-        <item name="android:background">@drawable/btn_primary_bg</item>
-        <item name="android:textColor">@drawable/btn_primary_text</item>
+        <item name="android:background">@drawable/app_btn_primary_bg</item>
+        <item name="android:textColor">@drawable/app_btn_primary_text</item>
     </style>
 
     <style name="App.Button.Warning">
-        <item name="android:background">@drawable/btn_warning_bg</item>
-        <item name="android:textColor">@drawable/btn_warning_text</item>
+        <item name="android:background">@drawable/app_btn_warning_bg</item>
+        <item name="android:textColor">@drawable/app_btn_warning_text</item>
     </style>
 
     <style name="App.Button.Danger">
-        <item name="android:background">@drawable/btn_danger_bg</item>
-        <item name="android:textColor">@drawable/btn_danger_text</item>
+        <item name="android:background">@drawable/app_btn_danger_bg</item>
+        <item name="android:textColor">@drawable/app_btn_danger_text</item>
     </style>
 
     <!-- TextView-->
@@ -105,7 +105,7 @@
 
 
     <style name="App.EditText" parent="@style/Widget.AppCompat.EditText">
-        <item name="android:background">@drawable/edittext_primary_bg</item>
+        <item name="android:background">@drawable/app_edittext_bg</item>
 
         <!-- margin作为app的theme无效，必须要再控件中显示引入这个style-->
         <item name="android:layout_marginTop">@dimen/app_8dp</item>
@@ -123,12 +123,12 @@
     </style>
 
     <style name="App.CheckBox" parent="@style/Widget.AppCompat.CompoundButton.CheckBox">
-        <item name="android:textColor">@drawable/checkbox_text</item>
+        <item name="android:textColor">@drawable/app_checkbox_text</item>
     </style>
 
 
     <style name="App.RadioButton" parent="@style/Widget.AppCompat.CompoundButton.RadioButton">
-        <item name="android:textColor">@drawable/checkbox_text</item>
+        <item name="android:textColor">@drawable/app_checkbox_text</item>
     </style>
 
 </resources>

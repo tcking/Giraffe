@@ -14,7 +14,7 @@ import com.github.tcking.giraffe.core.CoreBaseActivity;
  */
 public class BaseActivity extends CoreBaseActivity{
     protected Toolbar toolbar;
-    private AQuery $;
+    protected AQuery $;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,16 +32,22 @@ public class BaseActivity extends CoreBaseActivity{
     protected void setupToolbar() {
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         if (toolbar != null) {
-            if ((BaseActivity.getTopActivity() instanceof MainActivity)) {
-//                toolbar.setNavigationIcon(R.drawable.ic_menu_white_24dp);
-            } else {
-//                toolbar.setNavigationIcon(R.drawable.ic_arrow_back_white_18dp);
+            if (getNavigationIcon()!=0) {
+                toolbar.setNavigationIcon(getNavigationIcon());
             }
             setSupportActionBar(toolbar);
             ActionBar actionBar = getSupportActionBar();
             actionBar.setDisplayHomeAsUpEnabled(true);
             resetTitle(getTitle());
         }
+    }
+
+    /**
+     * 设置导航图标
+     * @return
+     */
+    protected int getNavigationIcon() {
+        return 0;
     }
 
     private void resetTitle(CharSequence title) {
@@ -62,7 +68,7 @@ public class BaseActivity extends CoreBaseActivity{
     public static boolean isMainExists() {
         synchronized (activitys) {
             for (CoreBaseActivity a : activitys) {
-                if (a instanceof MainActivity) {
+                if (a instanceof AppDrawerActivity) {
                     return true;
                 }
             }
@@ -72,11 +78,21 @@ public class BaseActivity extends CoreBaseActivity{
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId()==android.R.id.home && !(this instanceof MainActivity)) {
-            finish();
-            return true;
+        if (item.getItemId()==android.R.id.home) {
+            if (onNavigationIconPressed()) {
+                return true;
+            }
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    /**
+     * 当toolbar左上角的home icon或back icon点击时的处理，默认为finish
+     * @return
+     */
+    protected boolean onNavigationIconPressed() {
+        finish();
+        return true;
     }
 
     public void setDisplayHomeAsUpEnabled(boolean enabled){

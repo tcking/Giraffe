@@ -5,12 +5,12 @@ import android.os.Bundle;
 import com.github.tcking.example.R;
 
 /**
- * Created by tc(mytcking@gmail.com) on 15/8/5.
+ * Created by tc(mytcking@gmail.com) on 15/8/14.
  */
-public class MainActivity extends BaseActivity {
+public class AppNavBarActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.giraffe_drawer);
+        setContentView(R.layout.app_navbar);
     }
 }

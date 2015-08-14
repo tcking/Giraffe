@@ -63,11 +63,6 @@ public class CoreBaseActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (accessControl && !CoreSecurityManager.isCertificated()) {
-            onAccessDenied(this.getClass());
-            finish();
-            return;
-        }
         if (CoreAppConfig.isStrictMode()) {
             StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder()
                     .detectDiskReads()
@@ -166,6 +161,16 @@ public class CoreBaseActivity extends AppCompatActivity {
      */
     protected String getAnalyticsPageName() {
         return TextUtils.isEmpty(analyticsPageName)?getClass().getSimpleName():analyticsPageName;
+    }
+
+    @Override
+    public void setContentView(int layoutResID) {
+        super.setContentView(layoutResID);
+        if (accessControl && !CoreSecurityManager.isCertificated()) {
+            onAccessDenied(this.getClass());
+            finish();
+            return;
+        }
     }
 
     public static void finishTop() {
