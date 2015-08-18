@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 
 import com.github.tcking.example.activity.AppDrawerActivity;
-import com.github.tcking.example.activity.AppNavBarActivity;
+import com.github.tcking.example.activity.AppTabBarActivity;
 import com.github.tcking.example.activity.BaseActivity;
 import com.github.tcking.giraffe.core.CoreApp;
 import com.github.tcking.giraffe.core.CoreBaseActivity;
@@ -43,7 +43,7 @@ public class Router {
         } else if ("main".equals(componentName)) {
             startActivity(createIntent(AppDrawerActivity.class, url, parameters));
         } else if ("tabNav".equals(componentName)) {
-            startActivity(createIntent(AppNavBarActivity.class, url, parameters));
+            startActivity(createIntent(AppTabBarActivity.class, url, parameters));
         } else {
             handled = false;
         }

@@ -29,7 +29,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.AppNavBarActivity" />
+        <activity android:name=".activity.AppTabBarActivity" />
     </application>
 
 </manifest>

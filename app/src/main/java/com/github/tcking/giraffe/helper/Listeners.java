@@ -1,5 +1,6 @@
 package com.github.tcking.giraffe.helper;
 
+import android.support.v4.view.ViewPager;
 import android.text.Editable;
 
 /**
@@ -28,6 +29,24 @@ public class Listeners {
 
         @Override
         public void afterTextChanged(Editable s) {
+
+        }
+    }
+
+    public static class OnPageChangeListener implements ViewPager.OnPageChangeListener{
+
+        @Override
+        public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+        }
+
+        @Override
+        public void onPageSelected(int position) {
+
+        }
+
+        @Override
+        public void onPageScrollStateChanged(int state) {
 
         }
     }

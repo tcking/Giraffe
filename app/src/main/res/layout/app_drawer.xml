@@ -19,6 +19,6 @@
         app:headerLayout="@layout/app_nav_header"
         app:itemIconTint="@color/Grey_600"
         app:itemTextColor="@color/Grey_600"
-        app:menu="@menu/navigation_drawer_items"
+        app:menu="@menu/app_nav"
         />
 </android:android.support.v4.widget.DrawerLayout>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <include layout="@layout/app_toolbar"/>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/app_ViewPager"
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_weight="1"
+        />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <!-- RadioGroup-->
+        <RadioGroup
+            android:id="@+id/app_RadioGroup"
+            android:layout_margin="0px"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/app_48dp"
+            android:orientation="horizontal">
+            <RadioButton
+                style="@style/App.RadioButton.TabBar"
+                android:drawableTop="@drawable/app_tabbar_icon_1"
+                android:text="tab_1"
+                android:insetLeft="100dp"
+                />
+            <RadioButton
+                style="@style/App.RadioButton.TabBar"
+                android:drawableTop="@drawable/app_tabbar_icon_2"
+                android:text="tab_2"
+                />
+
+        </RadioGroup>
+
+        <!-- counter-->
+        <LinearLayout
+            android:clickable="false"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/app_48dp">
+            <LinearLayout
+                android:layout_width="0px"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:layout_height="match_parent">
+                <TextView
+                    style="@style/App.TextView.TabBarCounter"
+                    android:text="99+"
+                    android:background="@drawable/ic_counter_bg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <ImageView
+                    style="@style/App.TextView.TabBarCounter"
+                    android:src="@drawable/app_ic_circle_red"
+                    android:layout_width="wrap_content"
+                    android:visibility="gone"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0px"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:layout_height="match_parent">
+                <ImageView
+                    style="@style/App.TextView.TabBarCounter"
+                    android:src="@drawable/app_ic_circle_red"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+        </LinearLayout>
+    </FrameLayout>
+
+
+</LinearLayout>

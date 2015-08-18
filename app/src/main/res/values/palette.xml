@@ -47,6 +47,18 @@
     <color name="Red_700">#D32F2F</color>
     <color name="Red_800">#C62828</color>
     <color name="Red_900">#B71C1C</color>
+    
+    <!-- Teal-->
+    <color name="Teal_50">#E0F2F1</color>
+    <color name="Teal_100">#B2DFDB</color>
+    <color name="Teal_200">#80CBC4</color>
+    <color name="Teal_300">#4DB6AC</color>
+    <color name="Teal_400">#26A69A</color>
+    <color name="Teal_500">#009688</color>
+    <color name="Teal_600">#00897B</color>
+    <color name="Teal_700">#00796B</color>
+    <color name="Teal_800">#00695C</color>
+    <color name="Teal_900">#004D40</color>
 
     <!-- App-->
     <color name="App_50">@color/Indigo_50</color>

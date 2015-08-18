@@ -131,4 +131,25 @@
         <item name="android:textColor">@drawable/app_checkbox_text</item>
     </style>
 
+    <!-- tabBar的样式-->
+    <style name="App.RadioButton.TabBar">
+        <item name="android:layout_margin">0px</item>
+        <item name="android:button">@null</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_height">@dimen/app_48dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/app_tabbar_bg</item>
+        <item name="android:textColor">@drawable/app_tabbar_text</item>
+    </style>
+
+    <style name="App.TextView.TabBarCounter">
+        <item name="android:layout_marginTop">@dimen/app_6dp</item>
+        <item name="android:layout_marginBottom">0px</item>
+        <item name="android:layout_marginLeft">@dimen/app_32dp</item>
+        <item name="android:layout_marginRight">0px</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">@dimen/app_text_10sp</item>
+    </style>
+
 </resources>
