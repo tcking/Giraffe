@@ -34,6 +34,11 @@
                 android:drawableTop="@drawable/app_tabbar_icon_2"
                 android:text="tab_2"
                 />
+            <RadioButton
+                style="@style/App.RadioButton.TabBar"
+                android:drawableTop="@drawable/app_tabbar_icon_2"
+                android:text="tab_3"
+                />
 
         </RadioGroup>
 
@@ -42,6 +47,7 @@
             android:clickable="false"
             android:layout_width="match_parent"
             android:layout_height="@dimen/app_48dp">
+            <!-- counter_1-->
             <LinearLayout
                 android:layout_width="0px"
                 android:layout_weight="1"
@@ -61,6 +67,7 @@
                     android:layout_height="wrap_content"/>
 
             </LinearLayout>
+            <!-- counter_2-->
             <LinearLayout
                 android:layout_width="0px"
                 android:layout_weight="1"
@@ -69,6 +76,17 @@
                 <ImageView
                     style="@style/App.TextView.TabBarCounter"
                     android:src="@drawable/app_ic_circle_red"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+            <!-- counter_3-->
+            <LinearLayout
+                android:layout_width="0px"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:layout_height="match_parent">
+                <TextView
+                    style="@style/App.TextView.TabBarCounter"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
             </LinearLayout>
