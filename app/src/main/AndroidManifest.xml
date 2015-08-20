@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.github.tcking.example" >
 
+    <!-- take photo-->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
     <!-- 定位用-->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
@@ -30,6 +33,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.AppTabBarActivity" />
+        <activity android:name=".activity.AppGetPhotoActivity" />
+        <activity android:name=".activity.AppImageCroppingActivity" />
     </application>
 
 </manifest>

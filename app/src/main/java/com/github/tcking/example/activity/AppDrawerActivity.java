@@ -29,9 +29,11 @@ public class AppDrawerActivity extends BaseActivity {
                     ((DrawerLayout) findViewById(R.id.app_drawer)).closeDrawers();
                     int itemId = menuItem.getItemId();
                     if (itemId ==R.id.menu_navbar) {
-                        Router.goComponent("tabNav");
+                        Router.goComponent("tabBar");
                     }else if (itemId == R.id.menu_widget) {
                         Router.goComponent("main");
+                    }else if (itemId == R.id.menu_photo) {
+                        Router.goComponent("getPhoto");
                     }
                     return false;
                 }

@@ -26,6 +26,7 @@
             <RadioButton
                 style="@style/App.RadioButton.TabBar"
                 android:drawableTop="@drawable/app_tabbar_icon_1"
+                android:checked="true"
                 android:text="tab_1"
                 android:insetLeft="100dp"
                 />

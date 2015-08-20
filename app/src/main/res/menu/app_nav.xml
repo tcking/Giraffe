@@ -8,6 +8,14 @@
         <item
             android:id="@+id/menu_navbar"
             android:icon="@drawable/ic_extension_black_36dp"
-            android:title="tab nav"/>
+            android:title="tab bar"/>
+        <item
+            android:id="@+id/menu_photo"
+            android:icon="@drawable/ic_extension_black_36dp"
+            android:title="get photo"/>
+        <item
+            android:id="@+id/menu_locating"
+            android:icon="@drawable/ic_extension_black_36dp"
+            android:title="locating"/>
     </group>
 </menu>
