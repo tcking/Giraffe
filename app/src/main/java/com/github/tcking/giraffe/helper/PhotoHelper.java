@@ -167,14 +167,11 @@ public class PhotoHelper {
                 }
             } else if (requestCode == REQUESTCODE_CHOOSEPHOTO) {
                 if (data != null) {
-                    Log.d("PhotoHelper.onActivityResult {}", data.getData());
                     File inputImage = new File(data.getData().getPath());
                     tryCompress(inputImage);
                 } else {
                     callback.error(new Exception("data is null"));
                 }
-                Log.d("PhotoHelper.onActivityResult {}", data.getData());
-//                context.getContentResolver().openInputStream(data.getData());
             }else if (requestCode == REQUESTCODE_CROPPING) {
                 if (data != null) {
                     File inputImage = (File) data.getSerializableExtra("imageFile");
@@ -184,20 +181,19 @@ public class PhotoHelper {
                 } else {
                     callback.error(new Exception("data is null"));
                 }
-                Log.d("PhotoHelper.onActivityResult {}", data.getData());
-//                context.getContentResolver().openInputStream(data.getData());
             }
         }
     }
 
     private void tryCompress(File tempFile) {
         File outputFile=createImageFile();
-        compress(tempFile, outputFile, quality, maxWidth, maxHeight, maxFileSizeKB);
         if (cropping) {
+            compress(tempFile, outputFile, quality, context.getResources().getDisplayMetrics().widthPixels, 0, maxFileSizeKB);
             Intent intent = new Intent(context, AppImageCroppingActivity.class);
             intent.putExtra("imageFile", outputFile);
             context.startActivityForResult(intent, REQUESTCODE_CROPPING);
         } else {
+            compress(tempFile, outputFile, quality, maxWidth, maxHeight, maxFileSizeKB);
             callback.done(outputFile);
         }
     }
