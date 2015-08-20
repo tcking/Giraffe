@@ -24,7 +24,7 @@ import java.util.UUID;
 
 /**
  * <pre>
- * a easy way to get a photo:
+ * very easy  to get a photo in android:
  * 1.take a photo from camera: new PhotoHelper(activity).callback(...).takePhoto();
  * 2.choose a photo : new PhotoHelper(this).callback(...).choosePhoto();
  *
@@ -36,7 +36,13 @@ import java.util.UUID;
  *      .cropping(true) //cropping the target image
  *      .autoRotate(true) //try rotate the image according to photo exif information (some samsung devices need to rotate)
  *      .callback(...) //implement PhotoHelper.CallBack call done() when action is done or error() where something is wrong
- *      .takePhoto() //just do the job for you
+ *      .takePhoto() //or choosePhoto(), just do the job for you
+ *
+ * some util method:
+ * 1.PhotoHelper.saveBitmap2File(Bitmap bitmap,File targetFile,int quality) //save bitmap to file
+ * 2.PhotoHelper.getBitmap(File imageFile,int maxWidthInPx) //get Bitmap from a file and try scale image with max width
+ * 3.PhotoHelper.rotateBitmap(Bitmap bitmap , int angle) //rotate image
+ * 4.PhotoHelper.rotateBitmap(String src , Bitmap bitmap) //rotate image according to photo exif information
  * </pre>
  * Created by tc(mytcking@gmail.com) on 15/8/19.
  */
