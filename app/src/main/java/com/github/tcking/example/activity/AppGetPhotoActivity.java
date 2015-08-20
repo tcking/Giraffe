@@ -14,47 +14,38 @@ import java.io.File;
 
 /**
  * <pre>
- * a easy way to get a photo:
- * 1.take a photo from camera: new PhotoHelper(this).callback(new PhotoHelper.CallBack() {
- *
- * @Override public void done(File imageFile) {
- * <p/>
- * }
- * @Override public void error(Exception e) {
- * Log.e("AppGetPhotoActivity.error error", e);
- * }
- * }).takePhoto();
- * 2.choose a photo : new PhotoHelper(this).callback(...).choosePhoto();
- * <p/>
- * <p/>
+ * get a photo
  * </pre>
  * Created by tc(mytcking@gmail.com) on 15/8/19.
  */
 public class AppGetPhotoActivity extends BaseActivity {
 
-    PhotoHelper photoHelper = new PhotoHelper(this)
-            .quality(80)
-            .maxFileSizeKB(80)
-            .maxWidth(300,true)
-            .callback(new PhotoHelper.CallBack() {
-                @Override
-                public void done(File imageFile) {
-                    Log.d("AppGetPhotoActivity.done {}", imageFile.getAbsoluteFile());
-                    ((ImageView) findViewById(R.id.app_ImageView)).setImageBitmap(PhotoHelper.getBitmap(imageFile));
-                    ((TextView) findViewById(R.id.app_TextView_fileSize)).setText(String.format("image file size:%s",
-                            android.text.format.Formatter.formatFileSize(AppGetPhotoActivity.this, imageFile.length())));
-                }
-
-                @Override
-                public void error(Exception e) {
-                    Log.e("AppGetPhotoActivity.error error", e);
-                }
-            });
+    PhotoHelper photoHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.app_get_photo);
+
+        photoHelper = new PhotoHelper(this)
+                .quality(80)
+                .maxFileSizeKB(80)
+                .maxWidth(300, true)
+                .callback(new PhotoHelper.CallBack() {
+                    @Override
+                    public void done(File imageFile) {
+                        Log.d("AppGetPhotoActivity.done {}", imageFile.getAbsoluteFile());
+                        ((ImageView) findViewById(R.id.app_ImageView)).setImageBitmap(PhotoHelper.getBitmap(imageFile));
+                        ((TextView) findViewById(R.id.app_TextView_fileSize)).setText(String.format("image file size:%s",
+                                android.text.format.Formatter.formatFileSize(AppGetPhotoActivity.this, imageFile.length())));
+                    }
+
+                    @Override
+                    public void error(Exception e) {
+                        Log.e("AppGetPhotoActivity.error error", e);
+                    }
+                });
+
         View.OnClickListener listener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
