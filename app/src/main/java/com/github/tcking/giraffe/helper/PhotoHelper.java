@@ -24,9 +24,9 @@ import java.util.UUID;
 
 /**
  * <pre>
- * very easy  to get a photo in android:
- * 1.take a photo from camera: new PhotoHelper(activity).callback(...).takePhoto();
- * 2.choose a photo : new PhotoHelper(this).callback(...).choosePhoto();
+ * very easy  to get a photo in android,how to use:
+ * 1.create a helper instance and set callback then call takePhoto() or choosePhoto(): new PhotoHelper(activity).callback(...).takePhoto();
+ * 2.call photoHelper.onActivityResult in Activity or fragment onActivityResult method;
  *
  * more features:
  * new PhotoHelper(activity) //create a helper instance

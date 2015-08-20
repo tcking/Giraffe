@@ -29,8 +29,8 @@ public class AppGetPhotoActivity extends BaseActivity {
 
         photoHelper = new PhotoHelper(this)
                 .quality(80)
-                .maxFileSizeKB(80)
-                .maxWidth(300, true)
+                .maxFileSizeKB(200)
+//                .maxWidth(320, true)
                 .callback(new PhotoHelper.CallBack() {
                     @Override
                     public void done(File imageFile) {
