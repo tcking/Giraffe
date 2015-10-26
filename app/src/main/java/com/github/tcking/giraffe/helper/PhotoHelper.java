@@ -16,7 +16,7 @@ import android.text.TextUtils;
 import android.util.Log;
 
 
-import com.github.tcking.example.activity.AppImageCroppingActivity;
+import com.github.tcking.giraffe.ui.AppImageCroppingActivity;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
