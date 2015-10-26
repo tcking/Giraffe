@@ -10,7 +10,7 @@ import com.github.tcking.example.R;
 import com.github.tcking.giraffe.core.Log;
 import com.github.tcking.giraffe.helper.PhotoHelper;
 import com.github.tcking.giraffe.manager.DeviceManager;
-import com.github.tcking.giraffe.ui.ImageCroppingView;
+import com.github.tcking.giraffe.ui.AppImageCroppingView;
 
 import java.io.File;
 import java.io.IOException;
@@ -39,7 +39,7 @@ public class AppImageCroppingActivity extends BaseActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId()==R.id.menu_using) {
             Intent data = new Intent();
-            ImageCroppingView croppingView= (ImageCroppingView) findViewById(R.id.app_cropping_view);
+            AppImageCroppingView croppingView= (AppImageCroppingView) findViewById(R.id.app_cropping_view);
             try {
                 PhotoHelper.saveBitmap2File(croppingView.getCroppedImage(), imageFile);
                 data.putExtra("imageFile", imageFile);

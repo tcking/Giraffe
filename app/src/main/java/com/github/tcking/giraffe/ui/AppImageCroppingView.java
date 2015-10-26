@@ -27,11 +27,11 @@ import android.widget.Scroller;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 
-import static com.github.tcking.giraffe.ui.ImageCroppingView.State.ANIMATE_ZOOM;
-import static com.github.tcking.giraffe.ui.ImageCroppingView.State.DRAG;
-import static com.github.tcking.giraffe.ui.ImageCroppingView.State.FLING;
-import static com.github.tcking.giraffe.ui.ImageCroppingView.State.NONE;
-import static com.github.tcking.giraffe.ui.ImageCroppingView.State.ZOOM;
+import static com.github.tcking.giraffe.ui.AppImageCroppingView.State.ANIMATE_ZOOM;
+import static com.github.tcking.giraffe.ui.AppImageCroppingView.State.DRAG;
+import static com.github.tcking.giraffe.ui.AppImageCroppingView.State.FLING;
+import static com.github.tcking.giraffe.ui.AppImageCroppingView.State.NONE;
+import static com.github.tcking.giraffe.ui.AppImageCroppingView.State.ZOOM;
 
 /**
  * <pre>
@@ -42,7 +42,7 @@ import static com.github.tcking.giraffe.ui.ImageCroppingView.State.ZOOM;
  * @author mytcking@gmail.com
  *
  */
-public class ImageCroppingView extends ImageView {
+public class AppImageCroppingView extends ImageView {
 	private static final String DEBUG = "DEBUG";
 
 	//
@@ -108,17 +108,17 @@ public class ImageCroppingView extends ImageView {
 
 	private float y0;
 
-	public ImageCroppingView(Context context) {
+	public AppImageCroppingView(Context context) {
 		super(context);
 		sharedConstructing(context);
 	}
 
-	public ImageCroppingView(Context context, AttributeSet attrs) {
+	public AppImageCroppingView(Context context, AttributeSet attrs) {
 		super(context, attrs);
 		sharedConstructing(context);
 	}
 
-	public ImageCroppingView(Context context, AttributeSet attrs, int defStyle) {
+	public AppImageCroppingView(Context context, AttributeSet attrs, int defStyle) {
 		super(context, attrs, defStyle);
 		sharedConstructing(context);
 	}

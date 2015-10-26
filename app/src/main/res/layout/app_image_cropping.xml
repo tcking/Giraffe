@@ -6,7 +6,7 @@
 
     <include layout="@layout/app_toolbar"/>
 
-    <com.github.tcking.giraffe.ui.ImageCroppingView
+    <com.github.tcking.giraffe.ui.AppImageCroppingView
         android:id="@+id/app_cropping_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

@@ -1,5 +1,9 @@
 package com.github.tcking.giraffe.helper;
 
+import android.content.Context;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.github.tcking.example.App;
@@ -33,5 +37,33 @@ public class Toaster {
     }
     public static void showLong(int stringId){
         showLong(App.getInstance().getString(stringId));
+    }
+
+    public static void ok(final String message){
+        xShow(R.drawable.tips_ok_icon, message);
+    }
+
+    public static void error(final String message) {
+        xShow(R.drawable.tips_error_icon, message);
+    }
+
+    private static void xShow(final int icon, final String message) {
+        CoreApp.getInstance().runOnUiTread(new Runnable() {
+            @Override
+            public void run() {
+                CoreApp context = CoreApp.getInstance();
+                Toast result = new Toast(context);
+                LayoutInflater inflate = (LayoutInflater)
+                        context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                View v = inflate.inflate(R.layout.app_toast, null);
+                v.findViewById(R.id.img).setBackgroundResource(icon);
+                v.setBackgroundResource(R.drawable.app_toast_ok_bg);
+                TextView tv = (TextView) v.findViewById(R.id.button);
+                tv.setText(message);
+                result.setView(v);
+                result.setDuration(Toast.LENGTH_SHORT);
+                result.show();
+            }
+        });
     }
 }
