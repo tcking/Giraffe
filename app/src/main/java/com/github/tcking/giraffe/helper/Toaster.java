@@ -7,6 +7,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.github.tcking.example.App;
+import com.github.tcking.example.R;
 import com.github.tcking.giraffe.core.CoreApp;
 
 
@@ -40,14 +41,17 @@ public class Toaster {
     }
 
     public static void ok(final String message){
-        xShow(R.drawable.tips_ok_icon, message);
+        xShow(R.drawable.ic_done_white_24dp, message);
     }
 
     public static void error(final String message) {
-        xShow(R.drawable.tips_error_icon, message);
+        xShow(R.drawable.ic_highlight_off_white_24dp, message);
+    }
+    public static void info(final String message) {
+        xShow(R.drawable.ic_info_outline_white_24dp, message);
     }
 
-    private static void xShow(final int icon, final String message) {
+    public static void xShow(final int icon, final String message) {
         CoreApp.getInstance().runOnUiTread(new Runnable() {
             @Override
             public void run() {

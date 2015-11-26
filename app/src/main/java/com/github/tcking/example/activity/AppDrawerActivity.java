@@ -5,9 +5,11 @@ import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.github.tcking.example.R;
 import com.github.tcking.giraffe.helper.Router;
+import com.github.tcking.giraffe.helper.Toaster;
 
 /**
  * Created by tc(mytcking@gmail.com) on 15/8/5.
@@ -39,6 +41,22 @@ public class AppDrawerActivity extends BaseActivity {
                 }
             });
         }
+        View.OnClickListener onClickListener = new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (v.getId() == R.id.example_btn_primary) {
+                    Toaster.ok("ok:hello giraffe");
+                }else if (v.getId() == R.id.example_btn_warning) {
+                    Toaster.info("info:hello giraffe");
+                }else if (v.getId() == R.id.example_btn_danger) {
+                    Toaster.error("ok:hello giraffe");
+                }
+            }
+        };
+        findViewById(R.id.example_btn_default).setOnClickListener(onClickListener);
+        findViewById(R.id.example_btn_primary).setOnClickListener(onClickListener);
+        findViewById(R.id.example_btn_warning).setOnClickListener(onClickListener);
+        findViewById(R.id.example_btn_danger).setOnClickListener(onClickListener);
     }
 
     @Override
