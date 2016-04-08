@@ -1,5 +1,6 @@
 package com.github.tcking.example;
 
+import android.os.Environment;
 import com.github.tcking.giraffe.core.CoreAppConfig;
 
 import java.util.Properties;
@@ -18,4 +19,22 @@ public class Config extends CoreAppConfig {
     public static String getImageCache() {
         return imageCache;
     }
+
+    public static String getPicCacheDir(){
+        return getAppRootDir()+"/piccache";
+    }
+
+    /**
+     * 获取应文件夹的根目录(不同的环境区分开来)
+     * @return
+     */
+    public static String getAppRootDir() {
+        String dir=appHome;
+        if (!isProductionMode()) {
+            dir=dir+"-"+mode;
+        }
+        return Environment.getExternalStorageDirectory().getAbsolutePath()+dir;
+    }
+
+
 }

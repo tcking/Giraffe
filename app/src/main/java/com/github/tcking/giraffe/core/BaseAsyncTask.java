@@ -99,8 +99,12 @@ public abstract class BaseAsyncTask<Params, Progress, Result> extends AsyncTask<
 		return "请稍后...";
 	}
 
+	/**
+	 * do not override this method, use {@link #setListener(AsyncTaskListener)}}
+	 * @param result
+	 */
 	@Override
-	protected void onPostExecute(Result result) {
+	protected final void onPostExecute(Result result) {
 		dismissDialog();
 		if (listener != null) {
 			if (activity instanceof CoreBaseActivity) {
