@@ -48,7 +48,7 @@ public class Toaster {
         xShow(R.drawable.ic_highlight_off_white_24dp, message);
     }
     public static void info(final String message) {
-        xShow(R.drawable.ic_info_outline_white_24dp, message);
+        xShow(R.drawable.ic_error_outline_white_24dp, message);
     }
 
     public static void xShow(final int icon, final String message) {
