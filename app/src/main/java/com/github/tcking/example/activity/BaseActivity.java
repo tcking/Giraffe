@@ -1,6 +1,7 @@
 package com.github.tcking.example.activity;
 
 import android.os.Bundle;
+import android.support.v4.view.LayoutInflaterCompat;
 import android.support.v7.app.ActionBar;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
@@ -8,6 +9,7 @@ import android.view.MenuItem;
 import com.androidquery.AQuery;
 import com.github.tcking.example.R;
 import com.github.tcking.giraffe.core.CoreBaseActivity;
+import com.mikepenz.iconics.context.IconicsLayoutInflater;
 
 /**
  * Created by tc(mytcking@gmail.com) on 15/8/5.
@@ -18,6 +20,8 @@ public class BaseActivity extends CoreBaseActivity{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        //set for Android-Iconics
+        LayoutInflaterCompat.setFactory(getLayoutInflater(), new IconicsLayoutInflater(getDelegate()));
         setAccessControl(false);
         super.onCreate(savedInstanceState);
     }
