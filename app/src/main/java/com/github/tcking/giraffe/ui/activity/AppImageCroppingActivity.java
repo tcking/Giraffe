@@ -1,4 +1,4 @@
-package com.github.tcking.giraffe.ui;
+package com.github.tcking.giraffe.ui.activity;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -11,6 +11,7 @@ import com.github.tcking.example.activity.BaseActivity;
 import com.github.tcking.giraffe.core.Log;
 import com.github.tcking.giraffe.helper.PhotoHelper;
 import com.github.tcking.giraffe.manager.DeviceManager;
+import com.github.tcking.giraffe.ui.AppImageCroppingView;
 
 import java.io.File;
 import java.io.IOException;

@@ -2,6 +2,7 @@ package com.github.tcking.giraffe.helper;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.res.Resources;
@@ -90,11 +91,11 @@ public class UIHelper {
     /**
      * 显示提示对话框
      *
+     * @param buttonText
      * @param title
      * @param msg
-     * @param buttonText
      */
-    public static void confirm(String title, String msg, String yesButtonText, final Runnable yesAction,String noButtonText,final Runnable noAction) {
+    public static Dialog confirm(String title, String msg, String yesButtonText, final Runnable yesAction, String noButtonText, final Runnable noAction) {
         AlertDialog.Builder builder = new AlertDialog.Builder(CoreBaseActivity.getTopActivity(),AlertDialog.THEME_HOLO_LIGHT);
         if (!TextUtils.isEmpty(title)) {
             builder.setTitle(title);
@@ -121,7 +122,8 @@ public class UIHelper {
             }
         });
         AlertDialog dialog = builder.create();
-//        dialog.show();
+        dialog.show();
+        return dialog;
     }
 
     /**
@@ -154,12 +156,9 @@ public class UIHelper {
     }
 
     public static void showInputMethod(final View view) {
-        CoreApp.getInstance().runOnUiTread(new Runnable() {
-            @Override
-            public void run() {
-                InputMethodManager imm = (InputMethodManager) CoreApp.getInstance().getSystemService(Context.INPUT_METHOD_SERVICE);
-                imm.showSoftInput(view, InputMethodManager.SHOW_FORCED);
-            }
-        }, 100);
+        view.requestFocus();
+        InputMethodManager imm = (InputMethodManager) CoreApp.getInstance().getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0);
     }
+
 }
